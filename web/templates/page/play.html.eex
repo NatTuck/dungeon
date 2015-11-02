@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-8">
+    <h1 id="room-name">Room</h1>
+
+    <p id="room-desc">Loading...</p>
+  </div>
+
+  <div class="col-lg-4">
+    <h1>Char</h1>
+  </div>
+
+  <div class="col-lg-12">
+    <h1>Cmds</h1>
+  </div>
+</div>

@@ -3,6 +3,7 @@ defmodule Dungeon.UserSocket do
 
   ## Channels
   # channel "rooms:*", Dungeon.RoomChannel
+  channel "links:*", Dungeon.LinkChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
