@@ -1,0 +1,32 @@
+<h2>Listing ents</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Stats</th>
+      <th>Room</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for ent <- @ents do %>
+    <tr>
+      <td><%= ent.name %></td>
+      <td><%= ent.desc %></td>
+      <td><%= ent.stats %></td>
+      <td><%= ent.room_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: ent_path(@conn, :show, ent), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: ent_path(@conn, :edit, ent), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: ent_path(@conn, :delete, ent), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New ent", to: ent_path(@conn, :new) %>

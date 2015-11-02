@@ -1,0 +1,6 @@
+<h2>New ent</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: ent_path(@conn, :create) %>
+
+<%= link "Back", to: ent_path(@conn, :index) %>

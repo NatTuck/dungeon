@@ -17,6 +17,11 @@ defmodule Dungeon.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/play", PageController, :play
+
+    resources "/users", UserController
+    resources "/ents",  EntController
+    resources "/rooms", RoomController
   end
 
   # Other scopes may use custom stacks.

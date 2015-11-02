@@ -1,0 +1,23 @@
+<h2>Show room</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @room.name %>
+  </li>
+
+  <li>
+    <strong>Desc:</strong>
+    <%= @room.desc %>
+  </li>
+
+  <li>
+    <strong>Stats:</strong>
+    <%= @room.stats %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: room_path(@conn, :edit, @room) %>
+<%= link "Back", to: room_path(@conn, :index) %>

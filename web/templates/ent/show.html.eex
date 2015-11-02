@@ -1,0 +1,28 @@
+<h2>Show ent</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @ent.name %>
+  </li>
+
+  <li>
+    <strong>Desc:</strong>
+    <%= @ent.desc %>
+  </li>
+
+  <li>
+    <strong>Stats:</strong>
+    <%= @ent.stats %>
+  </li>
+
+  <li>
+    <strong>Room:</strong>
+    <%= @ent.room_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: ent_path(@conn, :edit, @ent) %>
+<%= link "Back", to: ent_path(@conn, :index) %>
