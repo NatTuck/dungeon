@@ -1,8 +1,9 @@
 defmodule Dungeon.LinkChannel do
   use Dungeon.Web, :channel
 
-  def join("links:lobby", payload, socket) do
+  def join("links:" <> link_id, payload, socket) do
     if authorized?(payload) do
+      IO.puts "Join #{link_id}"
       {:ok, socket}
     else
       {:error, %{reason: "unauthorized"}}
@@ -20,6 +21,11 @@ defmodule Dungeon.LinkChannel do
   def handle_in("shout", payload, socket) do
     broadcast socket, "shout", payload
     {:noreply, socket}
+  end
+
+  def handle_in("click", _payload, socket) do
+    IO.puts "click"
+    {:reply, {:ok, %{msg: "hi"}}, socket}
   end
 
   # This is invoked every time a notification is being broadcast

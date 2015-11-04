@@ -6,6 +6,6 @@ defmodule Dungeon.PageController do
   end
 
   def play(conn, _params) do
-    render conn, "play.html"
+    render conn, "play.html", user_id: 5
   end
 end

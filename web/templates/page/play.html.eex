@@ -11,5 +11,13 @@
 
   <div class="col-lg-12">
     <h1>Cmds</h1>
+    <button id="click-me">Click Me</button>
   </div>
 </div>
+
+<script>
+  var play = require('web/static/js/play');
+  $(function() { play.start(<%= @user_id %>); });
+</script>
+
+
