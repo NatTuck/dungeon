@@ -1,5 +1,6 @@
 defmodule Dungeon.User do
   use Dungeon.Web, :model
+  alias Dungeon.Repo
 
   schema "users" do
     field :email, :string
@@ -20,5 +21,9 @@ defmodule Dungeon.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+  end
+
+  def find_by_email(email) do
+    Repo.one!(from u in Dungeon.User, where: u.email == ^email)
   end
 end
