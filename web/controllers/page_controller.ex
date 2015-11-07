@@ -6,7 +6,7 @@ defmodule Dungeon.PageController do
   end
 
   def login(conn, params) do
-    user = Dungeon.User.find_by_email(params["user"]["email"])
+    user = Dungeon.User.find_by_email!(params["user"]["email"])
     conn
     |> put_session("user_id", user.id)
     |> redirect(to: "/play")

@@ -6,7 +6,7 @@
 
     <title>Hello Phoenix!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/jquery.js") %>"></script>
   </head>
 
   <body>
@@ -16,7 +16,12 @@
           <h1>Dungeon Demo</h1>
         </div>
         <div class="col-sm-6">
-          <p><a href="/">[home]</a></p>
+          <%= if assigns[:user] do %>
+            Logged in as <%= @user.email %>
+            <br><%= link "Logout", to: "/logout", method: "post" %>
+          <% else %>
+            Not logged in.
+          <% end %>
         </div>
         <div class="clearfix">
         </div>
@@ -28,5 +33,7 @@
       <%= @inner %>
 
     </div> <!-- /container -->
+    
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

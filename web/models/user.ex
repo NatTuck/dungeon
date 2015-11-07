@@ -23,7 +23,11 @@ defmodule Dungeon.User do
     |> cast(params, @required_fields, @optional_fields)
   end
 
-  def find_by_email(email) do
-    Repo.one!(from u in Dungeon.User, where: u.email == ^email)
+  def find_by_email!(email) do
+    Repo.get_by!(Dungeon.User, email: email)
+  end
+
+  def find!(id) do
+    Repo.get!(Dungeon.User, id)
   end
 end

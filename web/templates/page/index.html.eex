@@ -4,6 +4,7 @@
 
     <%= form_for @conn, "/login", [as: :user], fn(f) -> %>
       <%= text_input f, :email %>
+      <input type="submit" text="Play">
     <% end %>
   </div>
 </div>

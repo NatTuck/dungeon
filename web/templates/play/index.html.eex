@@ -16,8 +16,10 @@
 </div>
 
 <script>
-  var play = require('web/static/js/play');
-  $(function() { play.start(<%= @user_id %>); });
+  $(function() {
+    var play = require('web/static/js/play');
+    play.start(<%= @user.id %>);
+  });
 </script>
 
 
