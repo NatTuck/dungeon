@@ -23,9 +23,11 @@ defmodule Dungeon.LinkChannel do
     {:noreply, socket}
   end
 
-  def handle_in("click", _payload, socket) do
-    IO.puts "click"
-    {:reply, {:ok, %{msg: "hi"}}, socket}
+  def handle_in("click", data, socket) do
+    IO.puts("click: " <> Poison.encode!(data))
+    {date, _} = System.cmd("date", [])
+    broadcast!(socket, "show", %{date: date})
+    {:noreply, socket}
   end
 
   # This is invoked every time a notification is being broadcast

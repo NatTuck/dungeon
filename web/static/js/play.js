@@ -8,5 +8,9 @@ export var start = function(link_id) {
     
     $('#click-me').on("click", () =>
             channel.push("click", {}));
+
+    channel.on("show", payload => {
+        console.log(payload);
+    });
 };
 
