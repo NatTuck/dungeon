@@ -6,11 +6,19 @@ export var start = function(link_id) {
         .receive("ok", resp => { console.log("Joined successfully", resp) })
         .receive("error", resp => { console.log("Unable to join", resp) });
     
-    $('#click-me').on("click", () =>
-            channel.push("click", {}));
+    $('#click-me').on("click", () => {
+        channel.push("click", {})
+    });
+
+    $(document).keypress(evt => {
+        console.log("keypress: ", evt);
+    });
 
     channel.on("show", payload => {
+        $('#game-content').html(payload['game_html']);
         console.log(payload);
     });
+
+    channel.push("heya", {});
 };
 

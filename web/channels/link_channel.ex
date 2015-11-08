@@ -23,10 +23,10 @@ defmodule Dungeon.LinkChannel do
     {:noreply, socket}
   end
 
-  def handle_in("click", data, socket) do
-    IO.puts("click: " <> Poison.encode!(data))
+  def handle_in("heya", _data, socket) do
     {date, _} = System.cmd("date", [])
-    broadcast!(socket, "show", %{date: date})
+    html = Phoenix.View.render_to_string(Dungeon.PlayView, "game.html", [date: date])
+    broadcast!(socket, "show", %{game_html: html})
     {:noreply, socket}
   end
 

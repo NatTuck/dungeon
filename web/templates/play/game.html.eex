@@ -1,1 +1,1 @@
-<h1>The game</h1>
+<h1>It is now <%= @date %>.</h1>
