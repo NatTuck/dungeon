@@ -2,9 +2,9 @@
   <div class="col-lg-12">
     <p>Building:</p>
     <ul>
-      <li><a href="/users">Users</a></li>
-      <li><a href="/rooms">Rooms</a></li>
-      <li><a href="/ents">Ents</a></li>
+      <li><a href="/build/users">Users</a></li>
+      <li><a href="/build/rooms">Rooms</a></li>
+      <li><a href="/build/ents">Ents</a></li>
     </ul>
   </div>
 </div>

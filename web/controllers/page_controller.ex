@@ -5,6 +5,10 @@ defmodule Dungeon.PageController do
     render conn, "index.html"
   end
 
+  def build_index(conn, _params) do
+    render conn, "build_index.html"
+  end
+
   def login(conn, params) do
     user = Dungeon.User.find_by_email!(params["user"]["email"])
     conn
