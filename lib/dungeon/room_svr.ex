@@ -7,6 +7,10 @@ defmodule Dungeon.RoomSvr do
     GenServer.start_link(__MODULE__, room_id)
   end
 
+  def move_to(pid, ent_id) do
+    GenServer.call(:move_to, ent_id)
+  end
+
   def ents(pid) do
     GenServer.call(pid, :ents)
   end
