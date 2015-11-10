@@ -5,11 +5,12 @@ defmodule Dungeon.User do
   schema "users" do
     field :email, :string
     field :pw_hash, :string
+    field :ent_id, :integer
 
     timestamps
   end
 
-  @required_fields ~w(email pw_hash)
+  @required_fields ~w(email pw_hash ent_id)
   @optional_fields ~w()
 
   @doc """

@@ -11,6 +11,11 @@
     <strong>Pw hash:</strong>
     <%= @user.pw_hash %>
   </li>
+  
+  <li>
+    <strong>Ent ID:</strong>
+    <%= @user.ent_id %>
+  </li>
 
 </ul>
 
