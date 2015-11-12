@@ -7,7 +7,7 @@ export var start = function(link_id) {
         .receive("error", resp => { console.log("Unable to join", resp) });
     
     $('#click-me').on("click", () => {
-        channel.push("click", {})
+        channel.push("heya", 1)
     });
 
     $(document).keypress(evt => {
@@ -19,6 +19,8 @@ export var start = function(link_id) {
         console.log(payload);
     });
 
-    channel.push("heya", {});
+    channel.on("goats", msg => {
+        console.log("goats", msg);
+    });
 };
 

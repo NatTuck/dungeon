@@ -17,16 +17,20 @@ defmodule Dungeon.LinkChannel do
   end
 
   # It is also common to receive messages from the client and
-  # broadcast to everyone in the current topic (links:lobby).
+  # broadcast to everyone in the current topic.
   def handle_in("shout", payload, socket) do
     broadcast socket, "shout", payload
     {:noreply, socket}
   end
 
-  def handle_in("heya", _data, socket) do
+  def handle_in("heya", link_id, socket) do
     {date, _} = System.cmd("date", [])
     html = Phoenix.View.render_to_string(Dungeon.PlayView, "game.html", [date: date])
     broadcast!(socket, "show", %{game_html: html})
+
+    {:ok, pid} = Dungeon.PlayerBoss.get(link_id)
+    Dungeon.Player.poke(pid)
+
     {:noreply, socket}
   end
 

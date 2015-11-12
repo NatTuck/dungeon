@@ -3,9 +3,10 @@
     <div id="game-content">
       <p>Loading...</p>
 
-      <p><button id="click-me">Click Me</button></p>
       <div class="clearfix"></div>
     </div>
+    
+    <p><button id="click-me">Click Me</button></p>
   </div>
 </div>
 
