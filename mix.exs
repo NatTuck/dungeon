@@ -37,7 +37,8 @@ defmodule Dungeon.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
      {:poison, "~> 1.5"},
-     {:secure_random, ">= 0.0.0"}]
+     {:secure_random, ">= 0.0.0"},
+     {:ex_machina, ">= 0.0.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

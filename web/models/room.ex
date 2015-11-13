@@ -6,6 +6,8 @@ defmodule Dungeon.Room do
     field :desc, :string
     field :stats, :string
 
+    has_many :ents, Ent
+
     timestamps
   end
 

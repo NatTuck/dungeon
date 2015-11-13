@@ -5,7 +5,7 @@ defmodule Dungeon.User do
   schema "users" do
     field :email, :string
     field :pw_hash, :string
-    field :ent_id, :integer
+    belongs_to :ent, Ent
 
     timestamps
   end

@@ -5,7 +5,7 @@ defmodule Dungeon.Ent do
     field :name, :string
     field :desc, :string
     field :stats, :string
-    field :room_id, :integer
+    belongs_to :room, Room
 
     timestamps
   end
