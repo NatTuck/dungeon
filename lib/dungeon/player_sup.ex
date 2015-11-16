@@ -1,4 +1,4 @@
-defmodule Dungeon.PlayerBoss do
+defmodule Dungeon.PlayerSup do
   use GenServer
  
   # Client Operations

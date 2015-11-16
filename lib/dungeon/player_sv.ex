@@ -1,4 +1,4 @@
-defmodule Dungeon.Player do
+defmodule Dungeon.PlayerSv do
   use GenServer
   import Ecto.Query
   import Dungeon.EntActions
@@ -19,17 +19,13 @@ defmodule Dungeon.Player do
   # Server
   def init(player_id) do
     user = Dungeon.Repo.get!(Dungeon.User, player_id)
-    ent  = Dungeon.Repo.get!(Dungeon.Ent, user.ent_id)
-    sub_room(ent, ent.room_id)
-
-    channel = "links:#{user.id}"
-
-    Phoenix.PubSub.subscribe(Dungeon.PubSub, self(), channel)
+    ent  = Dungeon.Repo.get!(Dungeon.Ent,  user.ent_id)
+    room = Dungeon.Repo.get!(Dungeon.Room, ent.room_id)
 
     data = %{
       user: user,
       ent:  ent,
-      chan: channel,
+      room: room,
     }
     {:ok, data}
   end
