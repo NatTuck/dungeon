@@ -1,12 +1,14 @@
 defmodule Dungeon.EntControllerTest do
   use Dungeon.ConnCase
 
+  alias Dungeon.Factory
   alias Dungeon.Ent
   @valid_attrs %{desc: "some content", name: "some content", room_id: 42, stats: "some content"}
   @invalid_attrs %{}
 
   setup do
     conn = conn()
+    conn = assign(conn, :user, Factory.create(:user))
     {:ok, conn: conn}
   end
 

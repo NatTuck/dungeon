@@ -1,12 +1,17 @@
 defmodule Dungeon.UserControllerTest do
   use Dungeon.ConnCase
-
+  
+  alias Dungeon.Factory
   alias Dungeon.User
   @valid_attrs %{email: "some content", pw_hash: "some content"}
   @invalid_attrs %{}
 
   setup do
     conn = conn()
+    user = Factory.create(:user)
+    conn = conn 
+            |> fetch_session
+            |> put_session("user_id", user.id)
     {:ok, conn: conn}
   end
 

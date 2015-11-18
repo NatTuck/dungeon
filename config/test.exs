@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :dungeon, Dungeon.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "dungeon",
+  password: "xoochoh4if0M",
   database: "dungeon_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

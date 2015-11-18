@@ -1,7 +1,6 @@
 defmodule Dungeon.PlayerSv do
   use GenServer
   import Ecto.Query
-  import Dungeon.EntActions
 
   # Client
   def start_link(player_id) do
