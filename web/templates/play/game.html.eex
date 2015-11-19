@@ -1,1 +1,12 @@
-<h1>It is now <%= @date %>.</h1>
+<div class="row">
+  <div class="col-sm-8">
+    <h1><%= @date %>.</h1>
+    <p>Room</p>
+  </div>
+  <div class="col-sm-4">
+    <p>Player</p>
+  </div>
+  <div class="col-sm-12">
+    <p>Commands</p>
+  </div>
+</div>
